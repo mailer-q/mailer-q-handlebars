@@ -1,9 +1,9 @@
 {
   "name": "mailer-q-handlebars",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "repository": {
     "type": "git",
-    "url": "https://github.com/arsood/mailer-q-handlebars"
+    "url": "https://github.com/mailer-q/mailer-q-handlebars"
   },
   "description": "Handlebars renderer for the MailerQ plugin",
   "main": "index.js",
