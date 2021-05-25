@@ -3,7 +3,7 @@
 ## Installation
 
 ```bash
-npm install mailer-q-handlebars
+npm install mailer-q-handlebars --save
 ```
 
 ## Usage
@@ -18,39 +18,8 @@ Example configuration:
 const path = require("path");
 const MailerQHbs = require("mailer-q-handlebars");
 
-const config = {
-	renderer: MailerQHbs(path.join(__dirname, "./email_templates")),
-	defaultFrom: "Test Tester test@example.com",
-	defaultTo: "recipient@test.com",
-	host: "smtp.example.com",
-	port: 587,
-	auth: {
-		user: "your username",
-		pass: "your pass"
-	}
-}
-```
-
-Example sending mail:
-
-```javascript
-const MailerQ = require("./config/mailers");
-
-MailerQ
-.contents({
-	from: "Test Sender sender@test.com",
-	to: "recipient@example.com",
-	subject: "Test message",
-	templateFileName: "welcome.hbs",
-	locals: {
-		name: "Bob Jones"
-	}
-})
-.deliverNow()
-.then(() => {
-	console.log("Message sent!");
-})
-.catch((err) => {
-	console.log(err);
-});
+const options = {
+  ...otherOptionsHere,
+  renderer: MailerQHbs(path.join(__dirname, "./email_templates"))
+};
 ```
