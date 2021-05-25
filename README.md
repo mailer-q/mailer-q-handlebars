@@ -16,10 +16,13 @@ Example configuration:
 
 ```javascript
 const path = require("path");
+const MailerQ = require("mailer-q")();
 const MailerQHbs = require("mailer-q-handlebars");
 
 const options = {
   ...otherOptionsHere,
   renderer: MailerQHbs(path.join(__dirname, "./email_templates"))
 };
+
+module.exports = MailerQ.config(options);
 ```
